@@ -1,0 +1,18 @@
+{
+  "name": "sg-theme-suncorp",
+  "version": "1.0.0",
+  "description": "Styleguide Suncorp theme",
+  "scripts": {
+    "build": "grunt assemble",
+    "update": "grunt less_imports:theme",
+    "dist": "grunt less:theme && grunt cssmin:theme"
+  },
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "sg-build-tool": "1.0.0",
+    "sg-component-base": "1.0.0",
+    "sg-component-buttons": "1.0.0",
+    "sg-component-inputs": "1.0.0",
+    "underscore": "^1.8.3"
+  }
+}

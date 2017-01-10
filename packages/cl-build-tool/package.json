@@ -1,0 +1,20 @@
+{
+  "name": "sg-build-tool",
+  "version": "1.0.0",
+  "description": "Styleguide grunt tasks",
+  "main": "index.js",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-less": "^1.4.0",
+    "load-grunt-config": "^0.19.2",
+    "time-grunt": "^1.4.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "grunt-assemble": "^0.5.0",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-less-imports": "^1.2.2",
+    "handlebars": "^4.0.6",
+    "handlebars-helper-md": "^0.2.0"
+  }
+}

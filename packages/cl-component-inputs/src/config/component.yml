@@ -1,0 +1,10 @@
+name: inputs
+snippets:
+  basic-input:
+    content: inputs--basic-inputs
+    title: 'Basic inputs'
+    description: 'This is an example with a description that contains markdown `[on|off|name|address|email|etc..]`'
+  disabled-input:
+    content: inputs--disabled-inputs
+    title: 'Disabled inputs'
+    description: 'This is a description'

@@ -1,0 +1,16 @@
+<main class="sg-Doc--main">
+{{> intro}}
+<div class="sg-Docs--example">
+{{#each component.snippets }}
+<h2>{{this.title}}</h2>
+{{#markdown}}
+{{{ this.description }}}
+{{/markdown}}
+{{> (partialName this.content) }}
+<code>
+{{partialEscaped this.content}}
+</code>
+<hr/>
+{{/each }}
+</div>
+</main>

@@ -1,0 +1,15 @@
+{
+  "name": "sg-component-inputs",
+  "version": "1.0.0",
+  "description": "Suncorp StyleGuide input component.",
+  "scripts": {
+    "docs": "grunt component:docs",
+    "style": "grunt component:style",
+    "new-dependency": "grunt less_imports:component"
+  },
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "sg-component-base": "1.0.0",
+    "sg-build-tool": "1.0.0"
+  }
+}

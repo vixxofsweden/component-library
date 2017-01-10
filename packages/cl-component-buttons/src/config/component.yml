@@ -1,0 +1,10 @@
+name: buttons
+snippets:
+  buttons-markup:
+    content: buttons--markup
+    title: 'Buttons markup'
+    description: 'This is an example with a description that contains markdown `[on|off|name|address|email|etc..]`'
+  buttons-sizes:
+    content: buttons--sizes
+    title: 'Buttons sizes'
+    description: 'This is a description'
