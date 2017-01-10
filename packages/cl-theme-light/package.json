@@ -1,18 +1,19 @@
 {
-  "name": "sg-theme-suncorp",
+  "name": "cl-theme-light",
   "version": "1.0.0",
-  "description": "Styleguide Suncorp theme",
+  "description": "Light theme",
   "scripts": {
     "build": "grunt assemble",
     "update": "grunt less_imports:theme",
-    "dist": "grunt less:theme && grunt cssmin:theme"
+    "dist": "grunt less:theme && grunt cssmin:theme",
+    "style": "grunt theme:style"
   },
   "dependencies": {
     "grunt": "^1.0.1",
-    "sg-build-tool": "1.0.0",
-    "sg-component-base": "1.0.0",
-    "sg-component-buttons": "1.0.0",
-    "sg-component-inputs": "1.0.0",
+    "cl-build-tool": "1.0.0",
+    "cl-component-base": "1.0.0",
+    "cl-component-buttons": "1.0.0",
+    "cl-component-inputs": "1.0.0",
     "underscore": "^1.8.3"
   }
 }

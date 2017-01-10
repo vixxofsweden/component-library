@@ -15,10 +15,14 @@ module.exports = function(grunt) {
 			files: [
 				{
 					expand: true,
-					cwd: 'src/less',
-					src: ['**/*.dist.less'],
+					cwd: 'src',
+					src: ['*/less/*.dist.less'],
 					dest: 'dist',
-					ext: '.css'
+					ext: '.css',
+					rename: function(dest, src) {
+						var path = dest + '/' + src;
+						return path.replace('less', '');
+					}
 				}
 			]
 		},

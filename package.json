@@ -1,0 +1,22 @@
+{
+  "name": "component-library",
+  "scripts": {
+    "bootstrap": "npm install && lerna bootstrap",
+    "dev": "node app.js",
+    "build:dev": "lerna run style && lerna run docs && grunt sync && grunt newer:less && node app.js",
+    "build:dist": "lerna run style && lerna run docs && grunt sync && node app.js"
+  },
+  "devDependencies": {
+    "chalk": "^1.1.3",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-newer": "^1.2.0",
+    "grunt-sync": "^0.6.2",
+    "grunt-timer": "^0.6.0",
+    "lerna": "2.0.0-beta.30",
+    "load-grunt-config": "^0.19.2"
+  }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{name}} documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Docs files -->
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+    <!-- Component files -->
+    <link rel="stylesheet" type="text/css" href="/{{component}}/dist/{{component}}.css">
+
+    <!-- Theme files -->
+    {{# if theme}}
+    <link rel="stylesheet" type="text/css" href="/{{theme}}/dist/{{component}}/{{component}}.css">
+    {{/if}}
+
+</head>
+<body>
+    <div class="cl-doc--main">
+	   {{> (partialName component) }}
+    </div>
+</body>
+</html>

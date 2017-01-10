@@ -2,7 +2,7 @@ var path = require('path');
 var _ = require('underscore');
 var utils = require('../../lib/utils.js');
 
-// This one only needs to be run  the first time a component is added
+// This one only needs to be run the first time a component is added
 // or if a component has new/other dependencies
 
 module.exports = function(grunt) {
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 	var componentSources = [];
 
 	_.each(dependencies, function(version, component) {
-		if (utils.startsWith(component, 'sg-component-')) {
+		if (utils.startsWith(component, 'cl-component-')) {
 		    var src = path.join(node_modules, component, 'src/less/*.dist.less');
 		    componentSources.push(src);
 		}
@@ -38,48 +38,48 @@ module.exports = function(grunt) {
 
 	// For each component dependency - this is the theme dependencies
 	_.each(dependencies, function(version, component) {
-		if (utils.startsWith(component, 'sg-component-')) {
+		if (utils.startsWith(component, 'cl-component-')) {
 
-			// Example: _component = sg-component-buttons
+			// Example: _component = cl-component-buttons
 
 			// The path to the single dependency
-			// Example: sg-theme-suncorp/node_modules/sg-component-buttons
+			// Example: cl-theme-light/node_modules/cl-component-buttons
 			var dependency = path.join(node_modules, component);
 
 			// The dependencies of the dependency
-			// Example sg-component-base is a dependency of sg-component-buttons
+			// Example cl-component-base is a dependency of cl-component-buttons
 			var depDependencies = grunt.file.readJSON(path.join(dependency, 'package.json')).dependencies;
 
 			var sources = [];
 
-			// Add the component less (aka default brand). This file already has any dependencies to
+			// Add the component less. This file already has any dependencies to
 			// default brand in it
 			sources.push(path.join(dependency, 'src/less', '*.dist.less'));
 
 			// For every dependency of _component we want the theme less
-			// Example: _depSrc = sg-theme-suncorp/less/sg-component-base/dist/*.dist.less
+			// Example: _depSrc = cl-theme-light/less/cl-component-base/dist/*.dist.less
 			_.each(depDependencies, function(version, component) {
-				if (utils.startsWith(component, 'sg-component-')) {
+				if (utils.startsWith(component, 'cl-component-')) {
 					var depSrc = path.join('src', component, 'less', '*.source.less');
 					sources.push(depSrc);
 				}
-			})
+			});
 
 			// Add the component's less to the array
-			// Example: less/sg-component-button/*.source.less
+			// Example: less/cl-component-button/*.source.less
 			sources.push(path.join('src', component, 'less', '*.source.less'));
 
-			// Example: src/less/sg-component-buttons/sg-component-buttons.dist.less
+			// Example: src/less/cl-component-buttons/cl-component-buttons.dist.less
 			var dest = path.join('src', component, 'less', component + '.dist.less');
 
 			var config = {
 				src: sources,
 				dest: dest
-			}
+			};
 
 			themeConfig.push(config);
 		}
-	})
+	});
 
 	// --------- FULL
 	// Grab all dependencies of a component
@@ -87,7 +87,9 @@ module.exports = function(grunt) {
 	var fullThemeSrc = [];
 
 	_.each(dependencies, function(version, component) {
-		if (utils.startsWith(component, 'sg-component-')) {
+
+		// TODO: Use node glob instead
+		if (utils.startsWith(component, 'cl-component-')) {
 		    var themeSrc = path.join('src', component, 'less', '*.source.less');
 		    var componentSrc = path.join(node_modules, component, 'src/less', '*.source.less');
 		    fullThemeSrc.push(componentSrc);

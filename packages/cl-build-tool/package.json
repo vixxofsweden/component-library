@@ -1,7 +1,7 @@
 {
-  "name": "sg-build-tool",
+  "name": "cl-build-tool",
   "version": "1.0.0",
-  "description": "Styleguide grunt tasks",
+  "description": "Component library grunt tasks",
   "main": "index.js",
   "dependencies": {
     "grunt": "^1.0.1",
